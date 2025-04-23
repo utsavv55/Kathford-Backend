@@ -56,10 +56,3 @@ exports.deletecategory=async(req,res)=>{
     res.send(category)
 }
 
-exports.deletecategory=async(req,res)=>{
-    let category=await Category.findByIdAndDelete(req.params.id,{new:true});
-    if(!category){
-        res.status(404).json({error:"no category id found"});
-    }
-    res.send(category)
-}
